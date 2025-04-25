@@ -1,0 +1,198 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>María Teresa Cazarin | BI & Data Analyst Portfolio</title>
+  <link rel="icon" href="favicon.ico" type="image/x-icon">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --rose: #e1b0c9;
+      --blush: #c98fad;
+      --lilac: #9781d3;
+      --sky: #a1bdd1;
+      --deep-blue: #445e93;
+      --background: #fdfbfb;
+      --text-main: #3c3a4b;
+    }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      margin: 0;
+      padding: 0;
+      background: var(--background);
+      color: var(--text-main);
+    }
+
+    header {
+      background: url('header-image.png') no-repeat center center;
+      background-size: cover;
+      padding: 18rem 1.5rem 2rem 1.5rem;
+      text-align: left;
+      color: white;
+    }
+
+    header h1 {
+      font-size: 2.25rem;
+      margin: 0;
+      background-color: rgba(0, 0, 0, 0.4);
+      display: inline-block;
+      padding: 0.75rem 1.5rem;
+      border-radius: 0.5rem;
+    }
+
+    header p {
+      margin: 0.5rem 0;
+      background-color: rgba(0, 0, 0, 0.35);
+      display: inline-block;
+      padding: 0.25rem 1rem;
+      border-radius: 0.375rem;
+    }
+
+    section {
+      max-width: 960px;
+      margin: auto;
+      padding: 2rem 1rem;
+    }
+
+    h2 {
+      color: var(--deep-blue);
+      border-bottom: 2px solid var(--lilac);
+      padding-bottom: 0.25rem;
+    }
+
+    ul {
+      padding-left: 1.5rem;
+    }
+
+    .tag {
+      background: var(--lilac);
+      color: white;
+      display: inline-block;
+      padding: 0.3rem 0.75rem;
+      margin: 0.25rem;
+      border-radius: 1rem;
+      font-size: 0.85rem;
+    }
+
+    .dashboard-gallery {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 1.5rem;
+    }
+
+    .dashboard-item {
+      background: white;
+      border-radius: 0.75rem;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+      overflow: hidden;
+      transition: transform 0.2s ease;
+    }
+
+    .dashboard-item:hover {
+      transform: scale(1.015);
+    }
+
+    .dashboard-item img {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+
+    .dashboard-item p {
+      padding: 0.75rem 1rem;
+      font-size: 0.95rem;
+    }
+
+    footer {
+      text-align: center;
+      font-size: 0.9rem;
+      padding: 1rem;
+      background: var(--blush);
+      color: white;
+    }
+
+    a {
+      color: var(--deep-blue);
+      text-decoration: none;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <p>Email: tcazarin13@gmail.com · <a href="https://linkedin.com/in/teresa-cazarin-x" target="_blank">LinkedIn</a></p><br>
+    <p> Veracruz, México</p>
+  </header>
+
+  <section>
+    <h2>Perfil</h2>
+    <p>Analista de datos con experiencia y pasión por transformar datos en historias visuales que inspiran decisiones, desarrollando dashboards estratégicos con Power BI, modelado de datos y procesos de negocio. Apasionada por el analisis de procesos de negocios, analisis de datos y mejoras organizacionales.</p>
+    <p>Aquí encontrarás dashboards con flow, insights con estilo y análisis con mucho 💡 .<br>
+    <br>
+    🧠 Mis tecnologías: Power BI, DAX, SQL, Tabular Editor, Power Pivot y más.<br>
+    🌸 Mi estilo: claro, funcional y con un toque personal.</p>
+  </section>
+
+  <section>
+    <h2>Herramientas & Tecnologías</h2>
+    <div>
+      <span class="tag">Power BI Desktop & Service</span>
+      <span class="tag">DAX / DAX Studio</span>
+      <span class="tag">Power Pivot</span>
+      <span class="tag">Tabular Editor</span>
+      <span class="tag">SQL (intermedio)</span>
+      <span class="tag">MySQL</span>
+      <span class="tag">Dataverse</span>
+      <span class="tag">Dynamics 365</span>
+      <span class="tag">BPMN</span>
+      <span class="tag">Bizagi</span>
+    </div>
+  </section>
+
+  <section>
+    <h2>Proyectos Destacados</h2>
+    <ul>
+      <li>Desarrollo de dashboards en Power BI para recursos humanos y análisis nearshore.</li>
+      <li>Optimización de reportes con Tabular Editor y DAX Studio.</li>
+      <li>Automatización de procesos de contratación mediante integración de ATS Jobvite, airSlate (esignature) y D365 F&O.</li>
+      <li>Diseño de sistema lector de facturas XML para automatización contable en rubro de combustibles.</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>Dashboards de Muestra</h2>
+    <div class="dashboard-gallery">
+      <div class="dashboard-item">
+        <a href="https://app.powerbi.com/view?r=eyJrIjoiZmM0OTgyN2YtMTg4ZC00Y2Y4LWI4OGYtOTgwY2E4MzI0YWRmIiwidCI6IjQ2NTRiNmYxLTBlNDctNDU3OS1hOGExLTAyZmU5ZDk0M2M3YiIsImMiOjl9&pageName=175987973d499f234f54" target="_blank"><img src="Inventory Management Dashboard.png" alt="Dashboard de Recursos Humanos" />
+        <p>Este dashboard interactivo fue creado para el reto FP20 Analytics (Abril 2025) usando gráficos de ZoomCharts, permite tomar decisiones rápidas y fundamentadas para optimizar la gestión de inventarios y mejorar los procesos de reabastecimiento y almacenamiento.</p>
+      </a>
+    </div>
+      <div class="dashboard-item">
+        <img src="dashboard2.png" alt="Dashboard de Ventas" />
+        <p>Visualización de ventas mensuales y KPI de conversión en múltiples regiones.</p>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <h2>Educación & Certificaciones</h2>
+    <ul>
+      <li>Maestría en Ciencia de Datos – ISU Universidad (2024 – Actualidad)</li>
+      <li>Microsoft Certified: Azure Data Fundamentals (2024)</li>
+      <li>Intermediate SQL – DataCamp</li>
+      <li>Microsoft Certified: Power Platform Fundamentals (2023)</li>
+      <li>Diplomado en Big Data – Fundación Carlos Slim (2023)</li>
+    </ul>
+  </section>
+
+  <footer>
+    <p>&copy; 2025 María Teresa Cazarin · Portafolio Profesional</p>
+  </footer>
+</body>
+</html>
