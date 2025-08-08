@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Detección Inteligente de Fraude - Equipo 6</title>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;600;800&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --azul-oscuro: #1B1F6B;
+      --azul-claro: #4B6DD8;
+      --lila: #B48EF1;
+      --gris: #f4f4f4;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: 'Montserrat', sans-serif; background: var(--gris); color: #333; line-height: 1.6; }
+    header { background: linear-gradient(135deg, var(--azul-oscuro), var(--lila)); color: white; padding: 60px 20px; text-align: center; }
+    header h1 { font-size: 2.8rem; margin-bottom: 10px; }
+    header p { font-size: 1.1rem; max-width: 800px; margin: auto; }
+    section { padding: 50px 20px; max-width: 1000px; margin: auto; }
+    h2 { color: var(--azul-oscuro); font-weight: 800; margin-bottom: 20px; }
+    ul { padding-left: 20px; }
+    .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 30px; }
+    .card { background: white; border-radius: 12px; padding: 20px; box-shadow: 0 4px 10px rgba(0,0,0,0.05); }
+    .card img { width: 100%; border-radius: 10px; }
+    .team-card img { width: 130px; height: 130px; object-fit: cover; border-radius: 50%; margin-bottom: 15px; }
+    .team-card { text-align: center; }
+    .team-card a { color: var(--azul-claro); text-decoration: none; font-weight: bold; display: inline-block; margin-top: 10px; }
+    footer { background: var(--azul-oscuro); color: white; text-align: center; padding: 30px; margin-top: 50px; }
+  </style>
+</head>
+<body>
+
+<header>
+  <h1>Detección Inteligente de Fraude</h1>
+  <p>Solución desarrollada por el Equipo 6 para el Challenge Final del curso Bedu Santander. IA accesible para proteger activos financieros y la confianza del cliente.</p>
+</header>
+
+<section>
+  <h2>Contexto del Problema</h2>
+  <p>El fraude financiero es un problema global que afecta directamente la rentabilidad, reputación y confianza en instituciones bancarias. Se estima que solo en 2023, las pérdidas por fraude en tarjetas superaron los 35 mil millones de dólares. Esto implica una necesidad urgente de soluciones inteligentes, automatizadas y replicables que mitiguen este riesgo a gran escala. Nuestro objetivo es contribuir a resolver este problema usando tecnologías accesibles, sin requerir programación avanzada.</p>
+</section>
+
+<section>
+  <h2>Objetivos del Proyecto</h2>
+  <ul>
+    <li>Detectar fraudes bancarios en tiempo real, incluso en conjuntos de datos desbalanceados.</li>
+    <li>Reducir pérdidas económicas y mejorar la capacidad de reacción de las instituciones financieras.</li>
+    <li>Aplicar inteligencia artificial de forma ética, accesible y comprensible para usuarios no técnicos.</li>
+    <li>Utilizar plataformas no-code como KNIME para democratizar el uso de modelos predictivos.</li>
+    <li>Promover una cultura basada en datos para la toma de decisiones.</li>
+  </ul>
+</section>
+
+<section>
+  <h2>Flujo de Trabajo en KNIME</h2>
+  <p>KNIME fue elegido por ser una herramienta visual, intuitiva y potente para crear flujos de trabajo analíticos sin necesidad de escribir código. Nuestro workflow se dividió en las siguientes fases:</p>
+  <ul>
+    <li><strong>1. Preparación de datos:</strong> Se importaron 284,807 registros de transacciones. Se filtraron columnas irrelevantes, se verificó la integridad de los datos y se identificaron variables clave como Amount, V1 y V28, asociadas con patrones anómalos.</li>
+    <li><strong>2. Exploración de datos:</strong> Se utilizaron nodos de visualización para detectar outliers y comprobar la proporción de clases. La clase "Fraude" representaba solo el 0.172% de los datos, lo que evidenciaba un grave desbalance.</li>
+    <li><strong>3. Preprocesamiento:</strong> Se aplicó normalización min-max a las variables numéricas, y se utilizó una técnica de sobremuestreo (SMOTE) para equilibrar la proporción entre clases. También se dividió el dataset en entrenamiento (70%) y prueba (30%).</li>
+    <li><strong>4. Modelado y evaluación:</strong> Se entrenaron dos modelos: Regresión Logística y Random Forest. Ambos se evaluaron con métricas como accuracy, precisión, recall y matriz de confusión. Aunque Random Forest logró mayor precisión general (99.9%), la Regresión Logística detectó más fraudes verdaderos, lo cual es prioritario en estos casos.</li>
+    <li><strong>5. Interpretación y despliegue:</strong> Finalmente, se generaron visualizaciones de resultados y un sistema de alertas simuladas para mostrar cómo se podría implementar el modelo en producción.</li>
+  </ul>
+</section>
+
+<section>
+  <h2>Resultados</h2>
+  <p>Los modelos desarrollados mostraron un desempeño sobresaliente. El modelo de Random Forest obtuvo 99.9% de accuracy general, y la regresión logística alcanzó un recall superior al 95% para la clase fraude. Se redujo significativamente la cantidad de transacciones fraudulentas no detectadas, lo que representa una mejora directa en la seguridad financiera. Además, al utilizar KNIME, se logró que cualquier persona con conocimientos básicos pudiera replicar y adaptar esta solución a otras instituciones o contextos.</p>
+</section>
+
+<section>
+  <h2>Futuro de la Solución</h2>
+  <p>Planteamos varias mejoras para escalar esta solución:</p>
+  <ul>
+    <li>Integrar variables contextuales como hora de transacción, ubicación IP o historial del cliente para enriquecer el modelo.</li>
+    <li>Implementar técnicas más avanzadas como XGBoost, redes neuronales profundas o modelos de atención.</li>
+    <li>Realizar validación cruzada k-fold para robustecer el desempeño en distintos escenarios y reducir el sobreajuste.</li>
+    <li>Desarrollar un dashboard en tiempo real para visualizar alertas, estadísticas de fraude y evolución del modelo.</li>
+    <li>Crear una API RESTful para que la solución pueda integrarse con plataformas bancarias existentes.</li>
+  </ul>
+</section>
+
+<section>
+  <h2>Equipo 6</h2>
+  <div class="grid">
+    <div class="card team-card">
+      <img src="img/miembro1.jpg" alt="Miembro 1">
+      <h3> José M. Brione</h3>
+      <p>Soy ingeniero en sistemas computacionales. Actualmente, estoy enfocado en la inteligencia artificial y en el lenguaje de programación Python para aplicarlos en mi carrera profesional. Tomé el curso en Bedu precisamente para obtener una noción más clara de cómo funciona la IA y cómo se implementa en diferentes sectores.</p>
+      <a href="" target="_blank">LinkedIn</a>
+    </div>  
+    <div class="card team-card">
+      <img src="img/miembro2.jpg" alt="Miembro 2">
+      <h3>Manuel Cabrera</h3>
+      <p>soy diseñador gráfico, apasionado del diseño editorial y las artes gráficas. Actualmente incursionando en la IA generativa para implementar en mi trabajo y ahora con el curso de BEDU expandiendo mi perspectiva en cuanto al futuro de la IA y el impacto de sus aplicaciones en la industria y la vida cotidiana.</p>
+      <a href=" https://mx.linkedin.com/in/manuel-cabrera-51a187109" target="_blank">LinkedIn</a>
+    </div>
+    <div class="card team-card">
+      <img src="img/miembro3.jpg" alt="Miembro 3">
+      <h3>Vanessa Guadalupe</h3>
+      <p>Especialista en marketing digital. Desarrolló la estrategia de comunicación y diseño de la presentación.</p>
+      <a href="" target="_blank">LinkedIn</a>
+    </div>
+    <div class="card team-card">
+      <img src="img/miembro4.jpg" alt="Miembro 4">
+      <h3>José Carlos</h3>
+      <p>Arquitecto de datos. Encargado de la estructura del dataset, calidad de datos y limpieza avanzada.</p>
+      <a href="" target="_blank">LinkedIn</a>
+    </div>
+    <div class="card team-card">
+      <img src="img/miembro5.jpg" alt="Miembro 5">
+      <h3>Teresa Cazarin</h3>
+      <p>Analista de negocio. Coordinadora del proyecto, redactora de informes y desarrolladora de la web de presentación.</p>
+      <a href="https://www.linkedin.com/in/teresa-cazarin-x" target="_blank">LinkedIn</a>
+    </div>
+    <div class="card team-card">
+      <img src="img/miembro6.jpg" alt="Miembro 6">
+      <h3>Victor Hugo</h3>
+      <p>Diseñadora UX/UI. Se encargó del estilo visual de la solución, presentación y experiencia de usuario.</p>
+      <a href="" target="_blank">LinkedIn</a>
+    </div>
+    <div class="card team-card">
+      <img src="img/miembro7.jpg" alt="Miembro 7">
+      <h3>Juan Eduardo</h3>
+      <p>Desarrollador. Responsable de integración de componentes técnicos, validación de nodos KNIME y exportación.</p>
+      <a href="" target="_blank">LinkedIn</a>
+    </div>
+    <div class="card team-card">
+      <img src="img/miembro8.jpg" alt="Miembro 8">
+      <h3>Magaly</h3>
+      <p>Consultora en transformación digital. Aportó visión estratégica, objetivos de negocio y narrativa del pitch.</p>
+      <a href="" target="_blank">LinkedIn</a>
+    </div>
+    <div class="card team-card">
+      <img src="img/miembro8.jpg" alt="Miembro 8">
+      <h3>Humberto</h3>
+      <p>Consultora en transformación digital. Aportó visión estratégica, objetivos de negocio y narrativa del pitch.</p>
+      <a href="" target="_blank">LinkedIn</a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <p>© 2025 Equipo 6 - Proyecto Final Bedu Santander. "El verdadero costo del fraude está en lo que se deja de confiar."</p>
+</footer>
+
+</body>
+</html>
